@@ -1,0 +1,36 @@
+.home-page {
+  min-height: 100vh;
+  max-height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 140px 2rem 80px 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: homePageSlideIn 1s ease-out;
+}
+
+.home-content {
+  width: 100%;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-page {
+    padding: 120px 1.5rem 60px 1.5rem;
+    max-height: none;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-page {
+    padding: 100px 1rem 40px 1rem;
+    max-height: none;
+    overflow-y: auto;
+  }
+}
