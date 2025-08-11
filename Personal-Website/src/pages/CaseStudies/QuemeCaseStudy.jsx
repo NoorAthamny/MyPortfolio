@@ -71,7 +71,7 @@ const QuemeCaseStudy = () => {
           <div className="cs-container cols">
             <div className="col overview">
               <h2 className="cs-heading">Project <span className="accent">Overview</span></h2>
-              <p className="cs-paragraph">BuilderBond is a digital platform designed to connect skilled professionals such as construction workers, contractors, and technicians with job opportunities in their field. At the same time, it enables homeowners and project managers to easily find and hire trusted professionals for home repairs, renovations, and construction related tasks.</p>
+              <p className="cs-paragraph">Queme is a digital platform designed to connect skilled professionals such as construction workers, contractors, and technicians with job opportunities in their field. At the same time, it enables homeowners and project managers to easily find and hire trusted professionals for home repairs, renovations, and construction related tasks.</p>
               <div className="overview-grid">
                 <div className="ov-item"><span>Project Duration</span><strong>1 Week</strong></div>
                 <div className="ov-item"><span>My Role</span><strong>UI/UX Designer</strong></div>

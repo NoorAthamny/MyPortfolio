@@ -70,7 +70,7 @@ const Work = () => {
           <div className="project-grid">
             <div className="project-card" onClick={() => window.location.href = '/case-studies/queme'}>
               <div className="card-logo">
-                <div className="logo-symbol">Q</div>
+                <div className="logo-symbol"><img src="/images/queme.png" alt="queme-logo" /></div>
               </div>
               <div className="card-content">
                 <h3 className="project-title">QueMe Website</h3>

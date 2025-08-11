@@ -12,10 +12,10 @@ const Hero = () => {
           </p>
           
                      <div className="hero-links">
-             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hero-link">
+             <a href="https://www.linkedin.com/in/noor-athamny-7b38132a0/" target="_blank" rel="noopener noreferrer" className="hero-link">
                Linked In
              </a>
-             <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hero-link">
+             <a href="https://github.com/NoorAthamny" target="_blank" rel="noopener noreferrer" className="hero-link">
                GitHub
              </a>
            </div>
