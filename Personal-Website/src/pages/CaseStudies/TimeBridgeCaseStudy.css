@@ -67,17 +67,17 @@
 .back-link {
   display: inline-flex;
   align-items: center;
-  color: #10B981;
+  color: #333333;
   text-decoration: none;
   font-weight: 500;
   padding: 0.75rem 1.5rem;
-  border: 2px solid #10B981;
+  border: 2px solid #333333;
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 
 .back-link:hover {
-  background-color: #10B981;
+  background-color: #333333;
   color: #ffffff;
 }
 
@@ -116,7 +116,7 @@
   font-weight: 600;
   color: #333333;
   margin-bottom: 1rem;
-  border-bottom: 2px solid #10B981;
+  border-bottom: 2px solid #56279c;
   padding-bottom: 0.5rem;
 }
 
@@ -154,7 +154,7 @@
 .tb-highlights-list li:before,
 .tb-challenges-list li:before {
   content: "•";
-  color: #10B981;
+  color: #56279c;
   font-weight: bold;
   position: absolute;
   left: 0;
@@ -162,7 +162,7 @@
 
 .tb-tech-list li:before {
   content: "▸";
-  color: #10B981;
+  color: #56279c;
   position: absolute;
   left: 0;
 }
@@ -176,11 +176,11 @@
 .tb-role {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #10B981;
-  background: rgba(16, 185, 129, 0.1);
+  color: #56279c;
+  background: #56279c13;
   padding: 1rem;
   border-radius: 8px;
-  border-left: 4px solid #10B981;
+  border-left: 4px solid #56279c;
 }
 
 /* Responsive Design */
