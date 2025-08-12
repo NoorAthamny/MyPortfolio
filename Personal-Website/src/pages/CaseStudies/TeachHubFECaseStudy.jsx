@@ -14,7 +14,7 @@ const TeachHubFECaseStudy = () => {
       <div className="th-fe-container">
         <div className="th-fe-back-button">
           <Link to="/work" className="back-link">← Back to Work</Link>
-          <a href="https://github.com/yourusername/teach-hub" target="_blank" rel="noopener noreferrer" className="code-link">Code</a>
+          <a href="https://github.com/Yazan-Egbaria/appleseeds-final-project" target="_blank" rel="noopener noreferrer" className="code-link">Code</a>
         </div>
         <div className="th-fe-content">
           {/* Left Column */}
@@ -83,7 +83,7 @@ const TeachHubFECaseStudy = () => {
             <div className="th-fe-section">
               <h2 className="th-fe-section-title">Team</h2>
               <ul className="th-fe-team-list">
-                <li><strong>Yazan Egbaria</strong> - Team Lead Frontend Developer</li>
+                <li><strong>Yazan Egbaria</strong> - Frontend Developer</li>
                 <li><strong>Noor Athamny</strong> - Frontend Developer</li>
                 <li><strong>Ghidaa Haaj</strong> - Frontend Developer</li>
                 <li><strong>Tom Levi</strong> - Backend Developer</li>

@@ -103,7 +103,8 @@
 .code-link:hover {
   background-color: #ffffff;
   color: #333333;
-  border-color: #ffffff;
+  border-color: #333333 !important;
+  
 }
 
 .th-fe-content {

@@ -6,7 +6,7 @@ const TimeBridgeCaseStudy = () => {
     <div className="tb-page">
       {/* Hero Section */}
       <div className="tb-hero">
-        <img src="/images/peacetech-head-mockup.png" alt="Time Bridge Platform Mockup" className="tb-hero-image" />
+        <img src="\images\timeBridge-mockup.png" alt="Time Bridge Platform Mockup" className="tb-hero-image" />
         
       </div>
 
@@ -14,7 +14,7 @@ const TimeBridgeCaseStudy = () => {
       <div className="tb-container">
         <div className="tb-back-button">
           <Link to="/work" className="back-link">← Back to Work</Link>
-          <a href="https://github.com/yourusername/time-bridge" target="_blank" rel="noopener noreferrer" className="code-link">Code</a>
+          <a href="https://github.com/expozonee/time-bridge-tree-game" target="_blank" rel="noopener noreferrer" className="code-link">Code</a>
         </div>
         <div className="tb-content">
           {/* Left Column */}
@@ -22,15 +22,15 @@ const TimeBridgeCaseStudy = () => {
             <div className="tb-section">
               <h2 className="tb-section-title">Project Overview</h2>
               <p className="tb-section-text">
-                Time Bridge is an innovative educational game that bridges the gap between different historical eras and cultures through interactive language learning. Players embark on time-traveling adventures where they learn words, phrases, and cultural contexts from various periods in history. The game combines gamification with educational content to create an engaging learning experience that makes history and language acquisition fun and memorable.
-              </p>
+              I collaborated with a team to create a PeaceTech game designed to connect cultures in Israel. The game’s core mechanic is a word-guessing challenge, where players explore and learn words in both Arabic and Hebrew, fostering mutual understanding and cultural exchange through play.              </p>
             </div>
 
             <div className="tb-section">
               <h2 className="tb-section-title">Problem and Purpose</h2>
               <p className="tb-section-text">
-                Traditional language learning often lacks cultural context and historical depth, making it difficult for learners to understand the evolution of languages and cultural significance. Time Bridge addresses this by creating an immersive gaming experience where players learn not just words, but the stories, contexts, and cultural backgrounds behind them. This approach helps learners develop a deeper appreciation for linguistic diversity and historical connections.
-              </p>
+              In Israel, cultural and linguistic divides can create barriers to understanding and collaboration between communities. Many language-learning tools focus only on vocabulary and grammar, missing the opportunity to integrate cultural context and mutual engagement.
+
+This PeaceTech game addresses that gap by offering a fun, interactive word-guessing experience in Arabic and Hebrew. Through gameplay, players not only learn new words but also gain insight into each other’s cultures, encouraging empathy, curiosity, and cross-cultural dialogue in an accessible, engaging way.              </p>
             </div>
 
             <div className="tb-section">
@@ -50,8 +50,8 @@ const TimeBridgeCaseStudy = () => {
               <ul className="tb-highlights-list">
                 <li>Designed engaging game mechanics that make learning feel like entertainment.</li>
                 <li>Created historically accurate content with educational experts and historians.</li>
-                <li>Implemented adaptive learning algorithms to personalize the experience.</li>
-                <li>Built a comprehensive content management system for easy updates.</li>
+             
+                
               </ul>
             </div>
 
@@ -70,16 +70,16 @@ const TimeBridgeCaseStudy = () => {
           <div className="tb-right-column">
             <div className="tb-section">
               <h2 className="tb-section-title">Role</h2>
-              <p className="tb-role">Frontend Game Developer</p>
+              <p className="tb-role">Ui Ux | Frontend Developer</p>
             </div>
 
             <div className="tb-section">
               <h2 className="tb-section-title">Technologies</h2>
               <ul className="tb-tech-list">
-                <li>React</li>
+                
                 <li>JavaScript</li>
-                <li>HTML5 Canvas</li>
-                <li>CSS3 Animations</li>
+                <li>HTML5 </li>
+                <li>CSS</li>
                 <li>Local Storage</li>
                 <li>GitHub</li>
               </ul>
@@ -88,10 +88,9 @@ const TimeBridgeCaseStudy = () => {
             <div className="tb-section">
               <h2 className="tb-section-title">Team</h2>
               <ul className="tb-team-list">
-                <li><strong>Noor Athamny</strong> - Frontend Game Developer</li>
-                <li><strong>Game Designer</strong> - Educational Content & Mechanics</li>
-                <li><strong>Content Creator</strong> - Historical Research & Writing</li>
-                <li><strong>UX Designer</strong> - Learning Experience Design</li>
+                <li><strong>Noor Athamny</strong> - ui ux | Frontend Developer</li>
+                <li><strong>ibrahem haj ali</strong> - Frontend Developer</li>
+             
               </ul>
             </div>
           </div>

@@ -1,8 +1,9 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './TeachHubCaseStudy.css'
 
 const TeachHubCaseStudy = () => {
   const pageRef = useRef(null)
+  const [selectedImage, setSelectedImage] = useState(null)
 
   useEffect(() => {
     const page = pageRef.current
@@ -32,28 +33,21 @@ const TeachHubCaseStudy = () => {
     }
   }, [])
 
+  const handleImageClick = (imageSrc, imageAlt) => {
+    setSelectedImage({ src: imageSrc, alt: imageAlt })
+  }
+
+  const closeModal = () => {
+    setSelectedImage(null)
+  }
+
   return (
     <div className="th-cs-page" ref={pageRef}>
       <div className="th-cs-content">
         
-        {/* 1. Solution Statement */}
-        <section className="th-cs-slide solution">
-          <div className="th-cs-container">
-            <div className="th-solution-text">
-              <h1 className="th-cs-title">Solution <span className="th-accent">Statement</span></h1>
-              <p className="th-cs-paragraph">
-                Teach Hub provides an intuitive, culturally-sensitive interface that makes learning accessible to everyone.
-                The platform features clear navigation, engaging visual design, and seamless interactions that encourage
-                both learning and teaching.
-              </p>
-            </div>
-            <div className="th-solution-media">
-              <img src="/images/PeaceTech-Mockup.png" alt="Teach Hub platform mockup" />
-            </div>
-          </div>
-        </section>
+    
 
-        {/* 2. Project Overview & Problem Statement */}
+        {/* 1. Project Overview & Problem Statement */}
         <section className="th-cs-slide two-col">
           <div className="th-cs-container th-cols">
             <div className="col overview">
@@ -73,7 +67,7 @@ const TeachHubCaseStudy = () => {
           </div>
         </section>
 
-        {/* 3. My Role */}
+        {/* 2. My Role */}
         <section className="th-cs-slide role">
           <div className="th-cs-container">
             <div>
@@ -92,7 +86,7 @@ const TeachHubCaseStudy = () => {
           </div>
         </section>
 
-        {/* 4. Design Thinking Process */}
+        {/* 3. Design Thinking Process */}
         <section className="th-cs-slide process">
           <div className="th-cs-container">
             <h2 className="th-cs-heading">Design <span className="th-accent">Thinking Process</span></h2>
@@ -160,7 +154,7 @@ const TeachHubCaseStudy = () => {
           </div>
         </section>
 
-        {/* 5. Pain Points */}
+        {/* 4. Pain Points */}
         <section className="th-cs-slide painpoints">
           <div className="th-cs-container">
             <div>
@@ -193,16 +187,57 @@ const TeachHubCaseStudy = () => {
             <div className="th-flows">
               <div className="th-flow">
                 <div className="th-flow-title">Student Learning Flow</div>
-                <img src="/images/Seeker-Flow.png" alt="Student learning flow" />
+                <img 
+                  src="/images/Seeker-Flow.png" 
+                  alt="Student learning flow" 
+                  onClick={() => handleImageClick('/images/Seeker-Flow.png', 'Student learning flow')}
+                  className="clickable-image"
+                />
               </div>
               <div className="th-flow">
                 <div className="th-flow-title">Teacher Course Creation Flow</div>
-                <img src="/images/Profiver-flow.png" alt="Teacher course creation flow" />
+                <img 
+                  src="/images/Profiver-flow.png" 
+                  alt="Teacher course creation flow" 
+                  onClick={() => handleImageClick('/images/Profiver-flow.png', 'Teacher course creation flow')}
+                  className="clickable-image"
+                />
               </div>
             </div>
           </div>
         </section>
+            {/* 5. Solution Statement */}
+            <section className="th-cs-slide solution">
+          <div className="th-cs-container">
+            <div className="th-solution-text">
+              <h1 className="th-cs-title">Solution <span className="th-accent">Statement</span></h1>
+              <p className="th-cs-paragraph">
+                Teach Hub provides an intuitive, culturally-sensitive interface that makes learning accessible to everyone.
+                The platform features clear navigation, engaging visual design, and seamless interactions that encourage
+                both learning and teaching.
+              </p>
+            </div>
+            <div className="th-solution-media">
+              <img 
+                src="/images/PeaceTech-Mockup.png" 
+                alt="Teach Hub platform mockup" 
+                onClick={() => handleImageClick('/images/PeaceTech-Mockup.png', 'Teach Hub platform mockup')}
+                className="clickable-image"
+              />
+            </div>
+          </div>
+        </section>
       </div>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div className="th-image-modal" onClick={closeModal}>
+          <div className="th-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="th-modal-close" onClick={closeModal}>×</button>
+            <img src={selectedImage.src} alt={selectedImage.alt} />
+          </div>
+        </div>
+      )}
     </div>
   )
 }

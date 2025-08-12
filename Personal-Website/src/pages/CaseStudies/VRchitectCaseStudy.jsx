@@ -6,7 +6,7 @@ const VRchitectCaseStudy = () => {
     <div className="vr-page">
       {/* Hero Section */}
       <div className="vr-hero">
-        <img src="/images/peacetech-head-mockup.png" alt="VRchitect Platform Mockup" className="vr-hero-image" />
+        <img src="\images\VRchitect-mockup.png" alt="VRchitect Platform Mockup" className="vr-hero-image" />
        
       </div>
 
@@ -37,10 +37,10 @@ const VRchitectCaseStudy = () => {
               <h2 className="vr-section-title">Features</h2>
               <ul className="vr-features-list">
                 <li>Immersive 3D environment exploration</li>
-                <li>Real-time design modifications</li>
+                
                 <li>Multi-user collaborative sessions</li>
                 <li>Advanced lighting and material systems</li>
-                <li>Cross-platform VR headset support</li>
+                
               </ul>
             </div>
 
@@ -49,17 +49,16 @@ const VRchitectCaseStudy = () => {
               <ul className="vr-highlights-list">
                 <li>Developed custom VR interaction systems for architectural elements.</li>
                 <li>Implemented real-time rendering optimization for smooth VR performance.</li>
-                <li>Created intuitive UI/UX specifically designed for VR environments.</li>
-                <li>Integrated collaborative features allowing multiple users to work simultaneously.</li>
+               
               </ul>
             </div>
 
             <div className="vr-section">
               <h2 className="vr-section-title">Challenges</h2>
               <ul className="vr-challenges-list">
-                <li>Optimizing performance for smooth VR experience across different hardware.</li>
+                <li>Desgin 3D house models from scratch and make them interactive.</li>
                 <li>Designing intuitive controls for complex 3D manipulation in VR space.</li>
-                <li>Ensuring cross-platform compatibility with various VR headsets.</li>
+                
               </ul>
             </div>
           </div>
@@ -68,29 +67,21 @@ const VRchitectCaseStudy = () => {
           <div className="vr-right-column">
             <div className="vr-section">
               <h2 className="vr-section-title">Role</h2>
-              <p className="vr-role">Frontend VR Developer</p>
+              <p className="vr-role">Ui Ux | Frontend Developer | 3D Modeling</p>
             </div>
 
             <div className="vr-section">
               <h2 className="vr-section-title">Technologies</h2>
               <ul className="vr-tech-list">
-                <li>Unity 3D</li>
-                <li>C#</li>
-                <li>VR SDK (Oculus/SteamVR)</li>
-                <li>3D Modeling Tools</li>
+                <li>Twinmotion</li>
+                <li>JavaScript</li>
+                <li>html</li>
+                <li>css - sass</li>
                 <li>GitHub</li>
               </ul>
             </div>
 
-            <div className="vr-section">
-              <h2 className="vr-section-title">Team</h2>
-              <ul className="vr-team-list">
-                <li><strong>Noor Athamny</strong> - Frontend VR Developer</li>
-                <li><strong>VR Specialist</strong> - 3D Modeling & Design</li>
-                <li><strong>Backend Developer</strong> - Server & Database</li>
-                <li><strong>UX Designer</strong> - VR Interface Design</li>
-              </ul>
-            </div>
+           
           </div>
         </div>
       </div>

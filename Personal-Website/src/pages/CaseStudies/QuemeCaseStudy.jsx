@@ -18,6 +18,7 @@ const SmartImage = ({ candidates = [], alt = '', className = '' }) => {
 const QuemeCaseStudy = () => {
   const pageRef = useRef(null)
   const [manifest, setManifest] = useState(null)
+  const [selectedImage, setSelectedImage] = useState(null)
 
   useEffect(() => {
     const page = pageRef.current
@@ -55,6 +56,14 @@ const QuemeCaseStudy = () => {
       .catch(() => {})
   }, [])
 
+  const handleImageClick = (imageSrc, imageAlt) => {
+    setSelectedImage({ src: imageSrc, alt: imageAlt })
+  }
+
+  const closeModal = () => {
+    setSelectedImage(null)
+  }
+
   return (
     <div className="cs-page" ref={pageRef}>
       <div className="cs-content">
@@ -85,7 +94,7 @@ const QuemeCaseStudy = () => {
 
         {/* 3. My Role */}
         <section className="cs-slide role">
-          <div className="cs-container">
+          <div className="cs-container role-container">
             <div>
             <h2 className="cs-heading">My <span className="accent">Role</span></h2>
             <p className="cs-paragraph narrow">
@@ -104,7 +113,7 @@ const QuemeCaseStudy = () => {
 
         {/* 4. Design Thinking Process */}
         <section className="cs-slide process">
-          <div className="cs-container">
+          <div className="cs-container process-container">
             <h2 className="cs-heading">Design <span className="accent">Thinking Process</span></h2>
             <div className="steps">
               <div className="step">
@@ -175,7 +184,10 @@ const QuemeCaseStudy = () => {
           <div className="cs-container">
             <h2 className="cs-heading">Empathy <span className="accent">Mapping</span></h2>
             <div className="empathy-rows">
-              <div className="empathy-title">What users SAY & THINK:</div>
+
+
+              <div className="empathy-title">Contractors Perspective</div>
+
               <div className="cards-row">
                 <div className="card say">
                   <div className="card-label">Contractors:</div>
@@ -195,7 +207,7 @@ const QuemeCaseStudy = () => {
                 </div>
               </div>
               
-              <div className="empathy-title">What users DO & FEEL:</div>
+              
               <div className="cards-row">
                 <div className="card do">
                   <div className="card-label">Contractors:</div>
@@ -215,7 +227,7 @@ const QuemeCaseStudy = () => {
                 </div>
               </div>
               
-              <div className="empathy-title">Workers Perspective:</div>
+              <div className="empathy-title">Workers Perspective</div>
               <div className="cards-row">
                 <div className="card say">
                   <div className="card-label">Workers:</div>
@@ -337,11 +349,26 @@ const QuemeCaseStudy = () => {
               </p>
             </div>
             <div>
-                <img className='mockup-solution' src="/images/Mockup-homepage-1.png" alt="mockup image" />
+                <img 
+                  className='mockup-solution clickable-image' 
+                  src="/images/Mockup-homepage-1.png" 
+                  alt="mockup image" 
+                  onClick={() => handleImageClick('/images/Mockup-homepage-1.png', 'mockup image')}
+                />
             </div>
           </div>
         </section>
       </div>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div className="cs-image-modal" onClick={closeModal}>
+          <div className="cs-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="cs-modal-close" onClick={closeModal}>×</button>
+            <img src={selectedImage.src} alt={selectedImage.alt} />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
