@@ -17,7 +17,7 @@ const Work = () => {
           <div className="project-grid">
             <div className="project-card" onClick={() => window.location.href = '/case-studies/teach-hub-fe'}>
               <div className="card-logo">
-                <div className="logo-symbol">T</div>
+                <div className="logo-symbol"><img src="\images\Logo -teachhub.png" alt="teachhub-logo" /></div>
               </div>
               <div className="card-content">
                 <h3 className="project-title">Teach Hub</h3>
@@ -31,7 +31,7 @@ const Work = () => {
             
             <div className="project-card" onClick={() => window.location.href = '/case-studies/vrchitect'}>
               <div className="card-logo">
-                <div className="logo-symbol">VR</div>
+                <div className="logo-symbol"><img src="\images\logo-vr.png" alt="vr" /></div>
               </div>
               <div className="card-content">
                 <h3 className="project-title">VRchitect</h3>
