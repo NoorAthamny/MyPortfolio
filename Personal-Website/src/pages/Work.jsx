@@ -28,6 +28,20 @@ const Work = () => {
                 </div>
               </div>
             </div>
+
+            <div className="project-card" onClick={() => window.location.href = '/case-studies/time-bridge'}>
+              <div className="card-logo">
+                <div className="logo-symbol">T</div>
+              </div>
+              <div className="card-content">
+                <h3 className="project-title">Time Bridge</h3>
+                <div className="desc-wrapper">
+                  <p className="project-description">
+                  Players can learn words from different eras and cultures. 
+                  </p>
+                </div>
+              </div>
+            </div>
             
             <div className="project-card" onClick={() => window.location.href = '/case-studies/vrchitect'}>
               <div className="card-logo">
@@ -43,19 +57,7 @@ const Work = () => {
               </div>
             </div>
             
-            <div className="project-card" onClick={() => window.location.href = '/case-studies/time-bridge'}>
-              <div className="card-logo">
-                <div className="logo-symbol">T</div>
-              </div>
-              <div className="card-content">
-                <h3 className="project-title">Time Bridge</h3>
-                <div className="desc-wrapper">
-                  <p className="project-description">
-                  Players can learn words from different eras and cultures. 
-                  </p>
-                </div>
-              </div>
-            </div>
+       
           </div>
         </section>
 
