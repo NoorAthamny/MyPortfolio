@@ -1,23 +1,22 @@
 .work-page {
   min-height: 100vh;
-  max-height: 100vh;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: clamp(80px, 12vh, 140px) 2rem clamp(40px, 8vh, 80px) 2rem;
+  padding: 50px 2rem 80px 2rem;
   background: #ffffff;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  scroll-behavior: smooth;
 }
 
 .work-container {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 3rem;
 }
 
 
@@ -25,7 +24,6 @@
 /* Section Styling */
 .work-section {
   margin-bottom: clamp(1rem, 2vh, 2rem);
-  animation: fadeInUp 0.8s ease-out;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -78,7 +76,6 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: clamp(0.75rem, 2vw, 2rem);
   margin: 20px;
-  animation: fadeInUp 0.8s ease-out 0.3s both;
   flex: 1;
 }
 
@@ -89,7 +86,7 @@
   border-radius: 16px;
   padding: 20px;
   margin: 0; /* remove outer margin from cards */
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -105,9 +102,8 @@
 .project-card:nth-child(3) { animation-delay: 0.3s; }
 
 .project-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  border-color: rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Hover State for All Cards */
@@ -261,16 +257,107 @@
   }
 }
 
+/* Enhanced Scrolling and Animation Styles */
+.work-page {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.work-page::-webkit-scrollbar {
+  width: 8px;
+}
+
+.work-page::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.work-page::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.work-page::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth section transitions */
+.work-section {
+  scroll-margin-top: 2rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.work-section:hover {
+  transform: translateY(-2px);
+}
+
+/* Enhanced project card animations */
+.project-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth scroll behavior for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced fade-in animations for sections */
+.work-section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: sectionFadeIn 0.8s ease-out forwards;
+}
+
+.work-section:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.work-section:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+@keyframes sectionFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .work-page {
+    max-width: 100%;
+    padding: 50px 2rem 80px 2rem;
+  }
+  
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(1rem, 2.5vw, 2rem);
+  }
+}
+
+@media (max-width: 1024px) {
+  .work-page {
+    padding: 45px 1.75rem 70px 1.75rem;
+  }
+  
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+}
+
 @media (max-width: 768px) {
   .work-page {
     padding: clamp(80px, 12vh, 120px) 1.5rem clamp(32px, 8vh, 60px) 1.5rem;
-  }
-  /* allow scroll on tablet/mobile if needed */
-  .work-page,
-  .work-container {
-    max-height: none;
-    overflow-y: auto;
   }
   
   .section-header {
@@ -292,17 +379,15 @@
     margin: 20px;
     height: clamp(170px, 26vh, 220px);
   }
+  
+  .section-title {
+    font-size: 26px;
+  }
 }
 
 @media (max-width: 480px) {
   .work-page {
     padding: clamp(72px, 12vh, 100px) 1rem clamp(24px, 6vh, 40px) 1rem;
-  }
-  /* allow scroll on mobile */
-  .work-page,
-  .work-container {
-    max-height: none;
-    overflow-y: auto;
   }
   
   .section-title {
@@ -338,5 +423,120 @@
   
   .project-description {
     font-size: clamp(0.85rem, 3.2vw, 0.95rem);
+  }
+}
+
+@media (max-width: 360px) {
+  .work-page {
+    padding: clamp(70px, 10vh, 90px) 0.75rem clamp(20px, 5vh, 30px) 0.75rem;
+  }
+  
+  .section-header {
+    padding: 0 0.25rem;
+    gap: 0.75rem;
+  }
+  
+  .project-grid {
+    margin: 15px;
+    gap: clamp(0.4rem, 2vw, 0.6rem);
+  }
+  
+  .project-card {
+    margin: 15px;
+    padding: clamp(0.6rem, 2.5vw, 0.8rem);
+    height: clamp(140px, 22vh, 180px);
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .download-cv-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Enhanced scrolling experience */
+.work-page {
+  scroll-padding-top: 2rem;
+}
+
+/* Smooth transitions for all interactive elements */
+.work-section,
+.project-card,
+.section-header,
+.download-cv-button {
+  will-change: transform, opacity;
+}
+
+/* Enhanced hover effects for better visual feedback */
+.project-card:hover .card-logo {
+  transform: scale(1.05);
+}
+
+.project-card:hover .project-title {
+  color: #1a1a1a;
+}
+
+/* Improved focus states for accessibility */
+.project-card:focus {
+  outline: 2px solid #1a1a1a;
+  outline-offset: 2px;
+}
+
+.download-cv-button:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Smooth reveal animation for project descriptions */
+.desc-wrapper {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .desc-wrapper {
+  max-height: 100px;
+  opacity: 1;
+  padding: 12px;
+}
+
+/* Optimize scrolling performance */
+.work-page {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* Ensure proper spacing between sections */
+.work-section + .work-section {
+  margin-top: 2rem;
+}
+
+/* Responsive section spacing */
+@media (max-width: 768px) {
+  .work-section + .work-section {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-section + .work-section {
+    margin-top: 1rem;
+  }
+}
+
+/* Smooth entrance animation for the entire page */
+.work-page {
+  animation: pageEntrance 0.6s ease-out;
+}
+
+@keyframes pageEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

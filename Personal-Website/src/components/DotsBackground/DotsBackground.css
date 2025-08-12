@@ -7,3 +7,25 @@
   z-index: -1;
   pointer-events: none;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dots-background {
+    /* Optimize for mobile devices */
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 480px) {
+  .dots-background {
+    /* Further optimize for small screens */
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 360px) {
+  .dots-background {
+    /* Minimal dots for very small screens */
+    opacity: 0.5;
+  }
+}

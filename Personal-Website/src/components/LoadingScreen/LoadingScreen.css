@@ -182,9 +182,34 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .loading-content {
+    max-width: 350px;
+    padding: 1.75rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .loading-content {
+    max-width: 320px;
+    padding: 1.5rem;
+  }
+  
+  .logo-animation {
+    width: 70px;
+    height: 70px;
+    font-size: 2.2rem;
+  }
+  
+  .loading-title {
+    font-size: 1.8rem;
+  }
+}
+
 @media (max-width: 768px) {
   .loading-content {
     padding: 1.5rem;
+    max-width: 300px;
   }
   
   .logo-animation {
@@ -199,5 +224,93 @@
   
   .loading-subtitle {
     font-size: 0.9rem;
+  }
+  
+  .loading-text {
+    margin-bottom: 2.5rem;
+  }
+  
+  .loading-progress {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loading-content {
+    padding: 1.25rem;
+    max-width: 280px;
+  }
+  
+  .logo-animation {
+    width: 50px;
+    height: 50px;
+    font-size: 1.8rem;
+    border-radius: 16px;
+  }
+  
+  .loading-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .loading-subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .loading-text {
+    margin-bottom: 2rem;
+  }
+  
+  .loading-progress {
+    margin-bottom: 1.25rem;
+  }
+  
+  .progress-bar {
+    height: 3px;
+  }
+  
+  .dot {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+@media (max-width: 360px) {
+  .loading-content {
+    padding: 1rem;
+    max-width: 260px;
+  }
+  
+  .logo-animation {
+    width: 45px;
+    height: 45px;
+    font-size: 1.6rem;
+    border-radius: 14px;
+  }
+  
+  .loading-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .loading-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .loading-text {
+    margin-bottom: 1.75rem;
+  }
+  
+  .loading-progress {
+    margin-bottom: 1rem;
+  }
+  
+  .progress-bar {
+    height: 2px;
+  }
+  
+  .dot {
+    width: 5px;
+    height: 5px;
   }
 }

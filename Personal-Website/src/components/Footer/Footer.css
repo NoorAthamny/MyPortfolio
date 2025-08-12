@@ -9,6 +9,24 @@
   padding: 0 2rem;
 }
 
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .footer-container {
+    max-width: 100%;
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    padding: 1.75rem 0;
+  }
+  
+  .footer-container {
+    padding: 0 1.75rem;
+  }
+}
+
 @media (max-width: 768px) {
   .footer {
     padding: 1.5rem 0;
@@ -16,5 +34,25 @@
   
   .footer-container {
     padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.25rem 0;
+  }
+  
+  .footer-container {
+    padding: 0 0.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer {
+    padding: 1rem 0;
+  }
+  
+  .footer-container {
+    padding: 0 0.5rem;
   }
 }

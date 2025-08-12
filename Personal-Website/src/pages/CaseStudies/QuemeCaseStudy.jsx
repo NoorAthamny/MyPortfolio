@@ -16,23 +16,15 @@ const SmartImage = ({ candidates = [], alt = '', className = '' }) => {
 }
 
 const QuemeCaseStudy = () => {
-  const trackRef = useRef(null)
+  const pageRef = useRef(null)
   const [manifest, setManifest] = useState(null)
 
   useEffect(() => {
-    const track = trackRef.current
-    if (!track) return
+    const page = pageRef.current
+    if (!page) return
 
-    // Convert vertical wheel to horizontal scroll
-    const onWheel = (e) => {
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault()
-        track.scrollBy({ left: e.deltaY, behavior: 'smooth' })
-      }
-    }
-
-    // Animate the active slide via IntersectionObserver
-    const slides = Array.from(track.querySelectorAll('.cs-slide'))
+    // IntersectionObserver for section animations
+    const sections = Array.from(page.querySelectorAll('.cs-slide'))
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -41,15 +33,17 @@ const QuemeCaseStudy = () => {
           }
         })
       },
-      { root: track, threshold: 0.6 }
+      { 
+        threshold: 0.3,
+        rootMargin: '-50px 0px -50px 0px'
+      }
     )
-    slides.forEach((s) => io.observe(s))
+    
+    sections.forEach((section) => io.observe(section))
 
-    track.addEventListener('wheel', onWheel, { passive: false })
     return () => {
-      slides.forEach((s) => io.unobserve(s))
+      sections.forEach((section) => io.unobserve(section))
       io.disconnect()
-      track.removeEventListener('wheel', onWheel)
     }
   }, [])
 
@@ -62,9 +56,9 @@ const QuemeCaseStudy = () => {
   }, [])
 
   return (
-    <div className="cs-page">
-      <div className="cs-track" ref={trackRef}>
-   
+    <div className="cs-page" ref={pageRef}>
+      <div className="cs-content">
+     
 
         {/* 2. Project Overview & Problem Statement */}
         <section className="cs-slide two-col">
@@ -109,60 +103,162 @@ const QuemeCaseStudy = () => {
         </section>
 
         {/* 4. Design Thinking Process */}
-        <section className="cs-slide timeline">
-  <div className="cs-container">
-    <h2 className="cs-heading">Design <span className="accent">Thinking</span> Process</h2>
-    <div className="steps">
-      {[
-        { k:'iconEmpathize', file: 'fluent_calendar-search-16-regular.png', t: 'Empathize', dList: ['User Research','User Interview','Entrant Analysis'] },
-        { k:'iconDefine', file: 'carbon_text-link-analysis.png', t: 'Define', dList: ['User Persona','User Journey Map','Empathy Map'] },
-        { k:'iconIdeate', file: 'icons8_idea.png', t: 'Ideate', dList: ['Brainstorming','Card Sorting','User Flow'] },
-        { k:'iconDesign', file: 'fluent_design-ideas-16-regular.png', t: 'Design', dList: ['Paper Wireframes','Visual Design','Prototype'] },
-        { k:'iconTest', file: 'file-icons_testcafe.png', t: 'Test', dList: ['Check/Usability','Survey Insight','Improvements'] },
-      ].map((s, idx, arr) => (
-        <div className="step" key={s.t}>
-          <div className="step-icon">
-            <SmartImage
-              candidates={[
-                manifest?.[s.k],
-                `/images/${s.file}`
-              ].filter(Boolean)}
-              alt={s.t}
-            />
+        <section className="cs-slide process">
+          <div className="cs-container">
+            <h2 className="cs-heading">Design <span className="accent">Thinking Process</span></h2>
+            <div className="steps">
+              <div className="step">
+                <div className="step-icon">
+                  <img src="/images/fluent_design-ideas-16-regular.png" alt="Empathize" />
+                </div>
+                <div className="step-title">Empathize</div>
+                <ul className="step-list">
+                  <li>User interviews</li>
+                  <li>Pain point analysis</li>
+                  <li>Behavioral patterns</li>
+                </ul>
+              </div>
+              <div className="step-sep">→</div>
+              <div className="step">
+                <div className="step-icon">
+                  <img src="/images/icons8_idea.png" alt="Define" />
+                </div>
+                <div className="step-title">Define</div>
+                <ul className="step-list">
+                  <li>Problem synthesis</li>
+                  <li>User personas</li>
+                  <li>Journey mapping</li>
+                </ul>
+              </div>
+              <div className="step-sep">→</div>
+              <div className="step">
+                <div className="step-icon">
+                  <img src="/images/fluent_calendar-search-16-regular.png" alt="Ideate" />
+                </div>
+                <div className="step-title">Ideate</div>
+                <ul className="step-list">
+                  <li>Solution brainstorming</li>
+                  <li>Feature prioritization</li>
+                  <li>Flow design</li>
+                </ul>
+              </div>
+              <div className="step-sep">→</div>
+              <div className="step">
+                <div className="step-icon">
+                  <img src="/images/fluent_design-ideas-16-regular.png" alt="Design" />
+                </div>
+                <div className="step-title">Design</div>
+                <ul className="step-list">
+                  <li>Paper wireframes</li>
+                  <li>Visual design</li>
+                  <li>Prototype</li>
+                </ul>
+              </div>
+              <div className="step-sep">→</div>
+              <div className="step">
+                <div className="step-icon">
+                  <img src="/images/file-icons_testcafe.png" alt="Test" />
+                </div>
+                <div className="step-title">Test</div>
+                <ul className="step-list">
+                  <li>Usability testing</li>
+                  <li>Survey insights</li>
+                  <li>Improvements</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div className="step-title">{s.t}</div>
-          <ul className="step-list">
-            {s.dList.map(item => (<li key={item}>{item}</li>))}
-          </ul>
-          {idx < arr.length - 1 && <div className="step-sep" aria-hidden>»»»</div>}
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+        </section>
 
         {/* 5. Empathy Mapping */}
         <section className="cs-slide empathy">
           <div className="cs-container">
             <h2 className="cs-heading">Empathy <span className="accent">Mapping</span></h2>
             <div className="empathy-rows">
-              {[{title:'Contractor - Mohamad'},{title:'Worker - Rami'}].map(row => (
-                <div className="empathy-row" key={row.title}>
-                  <h3 className="empathy-title">{row.title}</h3>
-                  <div className="cards">
-                    <div className="card say"><div className="card-label">Say</div><ul><li>I need skilled workers I can trust.</li><li>I don’t have time to train someone from scratch.</li></ul></div>
-                    <div className="card think"><div className="card-label">Think</div><ul><li>Will this person show up on time?</li><li>How do I know who’s actually good?</li></ul></div>
-                    <div className="card do"><div className="card-label">Do</div><ul><li>Posts jobs quickly, scans applications.</li><li>Reads ratings and reviews.</li></ul></div>
-                    <div className="card feel"><div className="card-label">Feel</div><ul><li>Overwhelmed by unqualified applicants.</li><li>Worried about delays or workmanship.</li></ul></div>
-                  </div>
+              <div className="empathy-title">What users SAY & THINK:</div>
+              <div className="cards-row">
+                <div className="card say">
+                  <div className="card-label">Contractors:</div>
+                  <ul>
+                    <li>"I need workers quickly"</li>
+                    <li>"Quality is important"</li>
+                    <li>"I want reliable people"</li>
+                  </ul>
                 </div>
-              ))}
+                <div className="card think">
+                  <div className="card-label">Contractors:</div>
+                  <ul>
+                    <li>Worried about delays</li>
+                    <li>Concerned about quality</li>
+                    <li>Want cost efficiency</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="empathy-title">What users DO & FEEL:</div>
+              <div className="cards-row">
+                <div className="card do">
+                  <div className="card-label">Contractors:</div>
+                  <ul>
+                    <li>Post detailed job descriptions</li>
+                    <li>Review multiple applications</li>
+                    <li>Check references thoroughly</li>
+                  </ul>
+                </div>
+                <div className="card feel">
+                  <div className="card-label">Contractors:</div>
+                  <ul>
+                    <li>Frustrated with delays</li>
+                    <li>Stressed about deadlines</li>
+                    <li>Relieved when work is done well</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="empathy-title">Workers Perspective:</div>
+              <div className="cards-row">
+                <div className="card say">
+                  <div className="card-label">Workers:</div>
+                  <ul>
+                    <li>"I want steady work"</li>
+                    <li>"Fair pay matters"</li>
+                    <li>"I need job security"</li>
+                  </ul>
+                </div>
+                <div className="card think">
+                  <div className="card-label">Workers:</div>
+                  <ul>
+                    <li>Anxious about job stability</li>
+                    <li>Want fair compensation</li>
+                    <li>Seek growth opportunities</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="cards-row">
+                <div className="card do">
+                  <div className="card-label">Workers:</div>
+                  <ul>
+                    <li>Apply to multiple jobs</li>
+                    <li>Build online portfolios</li>
+                    <li>Network with other workers</li>
+                  </ul>
+                </div>
+                <div className="card feel">
+                  <div className="card-label">Workers:</div>
+                  <ul>
+                    <li>Insecure about job stability</li>
+                    <li>Proud of their skills</li>
+                    <li>Grateful for opportunities</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* 6. Pain Points */}
-        <section className="cs-slide badges">
+        <section className="cs-slide painpoints">
           <div className="cs-container">
             <div>
             <h2 className="cs-heading">Pain Points <span className="accent">from interviews</span></h2>
@@ -184,53 +280,53 @@ const QuemeCaseStudy = () => {
 
         {/* 7. User Flow */}
         <section className="cs-slide userflow">
-  <div className="cs-container">
-    <div>
-    <h2 className="cs-heading">User <span className="accent">Flow</span></h2>
-    <p>
-    This user flow illustrates two core paths on the Queme website: one for workers seeking jobs and one for contractors posting jobs Both users start by logging in or signing up, then proceed to browse or post jobs.
-<br /><br />
-Workers can view suggested listings and apply, while contractors can add a job and choose from applicantskeeping the experience simple, direct, and efficient.
-    </p>
-    </div>
-    <div className="flows">
-      <div className="flow">
-        <div className="flow-title">Worker Flow</div>
-        <SmartImage
-          candidates={[
-            manifest?.flowWorker,
-            '/images/Group512.png', // new worker flow image
-            '/images/userflow-worker.png',
-            '/images/worker-flow.png',
-            '/images/userflow1.png',
-            '/images/flow-worker.png',
-            '/images/07.png',
-            '/images/07.jpg'
-          ].filter(Boolean)}
-          alt="Worker flow"
-        />
-      </div>
-      <div className="flow">
-        <div className="flow-title">Contractor Flow</div>
-        <SmartImage
-          candidates={[
-            manifest?.flowContractor,
-            '/images/Group513.png', // new contractor flow image
-            '/images/userflow-contractor.png',
-            '/images/contractor-flow.png',
-            '/images/userflow2.png',
-            '/images/flow-contractor.png',
-            '/images/08.png',
-            '/images/08.jpg'
-          ].filter(Boolean)}
-          alt="Contractor flow"
-        />
-      </div>
-    </div>
-  </div>
-</section>
-     {/* 1. Solution Statement */}
-     <section className="cs-slide solution">
+          <div className="cs-container">
+            <div>
+            <h2 className="cs-heading">User <span className="accent">Flow</span></h2>
+            <p>
+            This user flow illustrates two core paths on the Queme website: one for workers seeking jobs and one for contractors posting jobs Both users start by logging in or signing up, then proceed to browse or post jobs.
+            <br /><br />
+            Workers can view suggested listings and apply, while contractors can add a job and choose from applicantskeeping the experience simple, direct, and efficient.
+            </p>
+            </div>
+            <div className="flows">
+              <div className="flow">
+                <div className="flow-title">Worker Flow</div>
+                <SmartImage
+                  candidates={[
+                    manifest?.flowWorker,
+                    '/images/Group512.png', // new worker flow image
+                    '/images/userflow-worker.png',
+                    '/images/worker-flow.png',
+                    '/images/userflow1.png',
+                    '/images/flow-worker.png',
+                    '/images/07.png',
+                    '/images/07.jpg'
+                  ].filter(Boolean)}
+                  alt="Worker flow"
+                />
+              </div>
+              <div className="flow">
+                <div className="flow-title">Contractor Flow</div>
+                <SmartImage
+                  candidates={[
+                    manifest?.flowContractor,
+                    '/images/Group513.png', // new contractor flow image
+                    '/images/userflow-contractor.png',
+                    '/images/contractor-flow.png',
+                    '/images/userflow2.png',
+                    '/images/flow-contractor.png',
+                    '/images/08.png',
+                    '/images/08.jpg'
+                  ].filter(Boolean)}
+                  alt="Contractor flow"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+           {/* 1. Solution Statement */}
+        <section className="cs-slide solution">
           <div className="cs-container">
             <div className="solution-text">
               <h1 className="cs-title">Solution <span className="accent">Statement</span></h1>
@@ -241,17 +337,8 @@ Workers can view suggested listings and apply, while contractors can add a job a
               </p>
             </div>
             <div>
-                <img className='mockup-solution' src="\images\Mockup-homepage-1.png" alt="mockup image" />
+                <img className='mockup-solution' src="/images/Mockup-homepage-1.png" alt="mockup image" />
             </div>
-            {/* <div className="solution-media">
-              <SmartImage
-                candidates={[
-                  manifest?.solutionMockup,
-                  '/images/queme-mockup.png','/images/queme-mockups.png','/images/mockup.png','/images/solution-mockup.png','/images/solution.png','/images/solution.jpg','/images/01.png','/images/01.jpg'
-                ].filter(Boolean)}
-                alt="Desktop, tablet and mobile mockups"
-              />
-            </div> */}
           </div>
         </section>
       </div>

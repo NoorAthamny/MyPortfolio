@@ -9,6 +9,11 @@ import Work from './pages/Work'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
 import QuemeCaseStudy from './pages/CaseStudies/QuemeCaseStudy'
+import AppDashboardCaseStudy from './pages/CaseStudies/AppDashboardCaseStudy'
+import TeachHubCaseStudy from './pages/CaseStudies/TeachHubCaseStudy'
+import TeachHubFECaseStudy from './pages/CaseStudies/TeachHubFECaseStudy'
+import VRchitectCaseStudy from './pages/CaseStudies/VRchitectCaseStudy'
+import TimeBridgeCaseStudy from './pages/CaseStudies/TimeBridgeCaseStudy'
 import './App.css'
 
 function App() {
@@ -40,6 +45,11 @@ function App() {
               <Route path="/work" element={<Work />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/case-studies/queme" element={<QuemeCaseStudy />} />
+              <Route path="/case-studies/app-dashboard" element={<AppDashboardCaseStudy />} />
+              <Route path="/case-studies/teach-hub" element={<TeachHubCaseStudy />} />
+              <Route path="/case-studies/teach-hub-fe" element={<TeachHubFECaseStudy />} />
+              <Route path="/case-studies/vrchitect" element={<VRchitectCaseStudy />} />
+              <Route path="/case-studies/time-bridge" element={<TimeBridgeCaseStudy />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>

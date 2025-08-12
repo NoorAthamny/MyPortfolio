@@ -15,7 +15,7 @@ const Work = () => {
            </div>
           
           <div className="project-grid">
-            <div className="project-card">
+            <div className="project-card" onClick={() => window.location.href = '/case-studies/teach-hub-fe'}>
               <div className="card-logo">
                 <div className="logo-symbol">T</div>
               </div>
@@ -29,7 +29,7 @@ const Work = () => {
               </div>
             </div>
             
-            <div className="project-card">
+            <div className="project-card" onClick={() => window.location.href = '/case-studies/vrchitect'}>
               <div className="card-logo">
                 <div className="logo-symbol">VR</div>
               </div>
@@ -37,12 +37,13 @@ const Work = () => {
                 <h3 className="project-title">VRchitect</h3>
                 <div className="desc-wrapper">
                   <p className="project-description">
-                  mmersive, interactive, realistic, innovative, detailed, customizable, accessible, visual, architectural, futuristic.                  </p>
+                  Immersive, interactive, realistic, innovative, detailed, customizable, accessible, visual, architectural, futuristic.
+                  </p>
                 </div>
               </div>
             </div>
             
-            <div className="project-card">
+            <div className="project-card" onClick={() => window.location.href = '/case-studies/time-bridge'}>
               <div className="card-logo">
                 <div className="logo-symbol">T</div>
               </div>
@@ -82,7 +83,7 @@ const Work = () => {
               </div>
             </div>
             
-            <div className="project-card">
+            <div className="project-card" onClick={() => window.location.href = '/case-studies/app-dashboard'}>
               <div className="card-logo">
                 <div className="logo-symbol">Q</div>
               </div>
@@ -96,9 +97,9 @@ const Work = () => {
               </div>
             </div>
             
-            <div className="project-card">
+            <div className="project-card" onClick={() => window.location.href = '/case-studies/teach-hub'}>
               <div className="card-logo">
-                <div className="logo-symbol">T</div>
+                <div className="logo-symbol"><img src="\images\Logo -teachhub.png" alt="" /></div>
               </div>
               <div className="card-content">
                 <h3 className="project-title">Teach Hub</h3>

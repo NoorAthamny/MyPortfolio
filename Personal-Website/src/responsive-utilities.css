@@ -1,0 +1,440 @@
+/* Responsive Utilities CSS */
+/* This file contains utility classes for responsive design across all pages */
+
+/* Responsive Breakpoints */
+/* 
+  Mobile First Approach:
+  - Default: 0px and up (mobile)
+  - 360px: Small mobile
+  - 480px: Mobile
+  - 768px: Tablet
+  - 1024px: Small desktop
+  - 1200px: Desktop
+  - 1440px+: Large desktop
+*/
+
+/* Responsive Container Utilities */
+.container-responsive {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 1200px) {
+  .container-responsive {
+    max-width: 100%;
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container-responsive {
+    padding: 0 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-responsive {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-responsive {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .container-responsive {
+    padding: 0 0.75rem;
+  }
+}
+
+/* Responsive Text Utilities */
+.text-responsive-xs {
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+}
+
+.text-responsive-sm {
+  font-size: clamp(0.9rem, 2.2vw, 1rem);
+}
+
+.text-responsive-base {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+}
+
+.text-responsive-lg {
+  font-size: clamp(1.1rem, 2.8vw, 1.3rem);
+}
+
+.text-responsive-xl {
+  font-size: clamp(1.3rem, 3.2vw, 1.6rem);
+}
+
+.text-responsive-2xl {
+  font-size: clamp(1.6rem, 3.8vw, 2rem);
+}
+
+.text-responsive-3xl {
+  font-size: clamp(2rem, 4.5vw, 2.5rem);
+}
+
+.text-responsive-4xl {
+  font-size: clamp(2.5rem, 5.5vw, 3.5rem);
+}
+
+.text-responsive-5xl {
+  font-size: clamp(3rem, 6.5vw, 4.5rem);
+}
+
+/* Responsive Spacing Utilities */
+.padding-responsive-xs {
+  padding: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.padding-responsive-sm {
+  padding: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+.padding-responsive-base {
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.padding-responsive-lg {
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.padding-responsive-xl {
+  padding: clamp(1.5rem, 3.5vw, 2.5rem);
+}
+
+.margin-responsive-xs {
+  margin: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.margin-responsive-sm {
+  margin: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+.margin-responsive-base {
+  margin: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.margin-responsive-lg {
+  margin: clamp(1.25rem, 3vw, 2rem);
+}
+
+.margin-responsive-xl {
+  margin: clamp(1.5rem, 3.5vw, 2.5rem);
+}
+
+/* Responsive Grid Utilities */
+.grid-responsive-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.grid-responsive-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.grid-responsive-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.grid-responsive-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+@media (max-width: 768px) {
+  .grid-responsive-2,
+  .grid-responsive-3,
+  .grid-responsive-4 {
+    grid-template-columns: 1fr;
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-responsive-1,
+  .grid-responsive-2,
+  .grid-responsive-3,
+  .grid-responsive-4 {
+    gap: clamp(0.5rem, 1.5vw, 1rem);
+  }
+}
+
+/* Responsive Flexbox Utilities */
+.flex-responsive {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.flex-responsive-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.flex-responsive-between {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+@media (max-width: 768px) {
+  .flex-responsive,
+  .flex-responsive-center,
+  .flex-responsive-between {
+    flex-direction: column;
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+  }
+}
+
+/* Responsive Image Utilities */
+.img-responsive {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.img-responsive-contain {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.img-responsive-cover {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Responsive Button Utilities */
+.btn-responsive {
+  padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(0.9rem, 2.2vw, 1rem);
+  border-radius: clamp(8px, 1.5vw, 12px);
+}
+
+.btn-responsive-sm {
+  padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2.5vw, 1.5rem);
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  border-radius: clamp(6px, 1.2vw, 10px);
+}
+
+.btn-responsive-lg {
+  padding: clamp(1rem, 2.5vw, 1.5rem) clamp(2rem, 4vw, 2.5rem);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  border-radius: clamp(10px, 2vw, 16px);
+}
+
+/* Responsive Card Utilities */
+.card-responsive {
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  border-radius: clamp(8px, 1.5vw, 12px);
+  box-shadow: 0 clamp(2px, 0.5vw, 4px) clamp(8px, 2vw, 16px) rgba(0, 0, 0, 0.1);
+}
+
+.card-responsive-sm {
+  padding: clamp(0.75rem, 2vw, 1rem);
+  border-radius: clamp(6px, 1.2vw, 10px);
+  box-shadow: 0 clamp(1px, 0.3vw, 3px) clamp(6px, 1.5vw, 12px) rgba(0, 0, 0, 0.1);
+}
+
+.card-responsive-lg {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: clamp(12px, 2vw, 16px);
+  box-shadow: 0 clamp(4px, 1vw, 6px) clamp(12px, 3vw, 24px) rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Form Utilities */
+.form-responsive {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.form-group-responsive {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1.5vw, 0.75rem);
+}
+
+.input-responsive {
+  padding: clamp(0.75rem, 2vw, 1rem);
+  font-size: clamp(0.9rem, 2.2vw, 1rem);
+  border-radius: clamp(6px, 1.2vw, 8px);
+}
+
+/* Responsive Navigation Utilities */
+.nav-responsive {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+@media (max-width: 768px) {
+  .nav-responsive {
+    flex-direction: column;
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+  }
+}
+
+/* Responsive Section Utilities */
+.section-responsive {
+  padding: clamp(2rem, 5vw, 4rem) 0;
+}
+
+.section-responsive-sm {
+  padding: clamp(1.5rem, 4vw, 3rem) 0;
+}
+
+.section-responsive-lg {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+}
+
+/* Responsive Gap Utilities */
+.gap-responsive-xs {
+  gap: clamp(0.25rem, 1vw, 0.5rem);
+}
+
+.gap-responsive-sm {
+  gap: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.gap-responsive-base {
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.gap-responsive-lg {
+  gap: clamp(1.5rem, 3vw, 2rem);
+}
+
+.gap-responsive-xl {
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+/* Responsive Border Radius Utilities */
+.rounded-responsive-sm {
+  border-radius: clamp(4px, 1vw, 6px);
+}
+
+.rounded-responsive-base {
+  border-radius: clamp(6px, 1.2vw, 8px);
+}
+
+.rounded-responsive-lg {
+  border-radius: clamp(8px, 1.5vw, 12px);
+}
+
+.rounded-responsive-xl {
+  border-radius: clamp(12px, 2vw, 16px);
+}
+
+/* Responsive Shadow Utilities */
+.shadow-responsive-sm {
+  box-shadow: 0 clamp(1px, 0.3vw, 2px) clamp(3px, 1vw, 6px) rgba(0, 0, 0, 0.1);
+}
+
+.shadow-responsive-base {
+  box-shadow: 0 clamp(2px, 0.5vw, 4px) clamp(6px, 1.5vw, 12px) rgba(0, 0, 0, 0.1);
+}
+
+.shadow-responsive-lg {
+  box-shadow: 0 clamp(4px, 1vw, 6px) clamp(12px, 3vw, 24px) rgba(0, 0, 0, 0.1);
+}
+
+.shadow-responsive-xl {
+  box-shadow: 0 clamp(8px, 2vw, 12px) clamp(20px, 5vw, 40px) rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Animation Utilities */
+.animate-responsive {
+  transition: all clamp(0.2s, 0.5vw, 0.3s) ease;
+}
+
+.animate-responsive-slow {
+  transition: all clamp(0.3s, 0.8vw, 0.5s) ease;
+}
+
+.animate-responsive-fast {
+  transition: all clamp(0.1s, 0.3vw, 0.2s) ease;
+}
+
+/* Responsive Visibility Utilities */
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+  
+  .show-mobile {
+    display: block !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .show-mobile {
+    display: none !important;
+  }
+  
+  .hide-mobile {
+    display: block !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hide-small-mobile {
+    display: none !important;
+  }
+  
+  .show-small-mobile {
+    display: block !important;
+  }
+}
+
+/* Responsive Layout Utilities */
+.layout-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+@media (max-width: 768px) {
+  .layout-responsive {
+    grid-template-columns: 1fr;
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+  }
+}
+
+/* Responsive Typography Scale */
+.typography-scale-responsive {
+  --scale-ratio: clamp(1.067, 1vw, 1.125);
+  --base-size: clamp(16px, 2.5vw, 18px);
+  --line-height: clamp(1.4, 1.5vw, 1.6);
+}
+
+/* Responsive Spacing Scale */
+.spacing-scale-responsive {
+  --space-xs: clamp(0.25rem, 1vw, 0.5rem);
+  --space-sm: clamp(0.5rem, 1.5vw, 1rem);
+  --space-md: clamp(1rem, 2.5vw, 1.5rem);
+  --space-lg: clamp(1.5rem, 3vw, 2rem);
+  --space-xl: clamp(2rem, 4vw, 3rem);
+  --space-2xl: clamp(3rem, 6vw, 4rem);
+  --space-3xl: clamp(4rem, 8vw, 6rem);
+}
