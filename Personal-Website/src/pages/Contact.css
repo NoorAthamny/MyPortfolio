@@ -67,8 +67,8 @@
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: #FF5C5C;
-  box-shadow: 0 0 0 3px rgba(255, 92, 92, 0.1);
+  border-color: #FE8B8B;
+  box-shadow: 0 0 0 3px rgba(254, 139, 139, 0.1);
 }
 
 .form-textarea {
@@ -94,6 +94,74 @@
   background: #000;
   transform: translateY(-2px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Form States */
+.submit-button.submitting {
+  background: #666;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Submit Status Messages */
+.submit-success,
+.submit-error {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.submit-success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.submit-error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Contact Info Section */
+.contact-info {
+  margin-top: 3rem;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-info h3 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.contact-info p {
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.email-link {
+  color: #FE8B8B;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.email-link:hover {
+  color: #ff6b6b;
+  text-decoration: underline;
 }
 
 /* Contact Page Animations */
@@ -169,6 +237,19 @@
   .contact-description {
     font-size: 1rem;
     margin-bottom: 2.5rem;
+  }
+
+  .contact-info {
+    margin-top: 2rem;
+    padding: 1.5rem;
+  }
+  
+  .contact-info h3 {
+    font-size: 1.3rem;
+  }
+  
+  .email-link {
+    font-size: 1.1rem;
   }
 }
 
