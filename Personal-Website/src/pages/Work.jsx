@@ -65,7 +65,7 @@ const Work = () => {
         <section className="work-section">
                      <div className="section-header">
              <h2 className="section-title">Ui Ux Design</h2>
-                           <a href="/Noor Athamny -Ui Ux Resume.docx" download className="download-cv-button">
+                           <a href="\Noor Athamny -Ui Ux Resume.docx" download className="download-cv-button">
                Download CV
              </a>
            </div>
